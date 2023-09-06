@@ -69,6 +69,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Gate.cs" />
+    <Compile Include="InputSource.cs" />
     <Compile Include="NotGate.cs" />
     <Compile Include="OrGate.cs" />
     <Compile Include="Pin.cs" />
@@ -166,6 +167,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\InputSrcAct.png" />
+    <Content Include="Resources\InputSrcInac.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
