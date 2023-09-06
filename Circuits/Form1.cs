@@ -228,6 +228,29 @@ namespace Circuits
             newGate = new InputSource(0, 0);
         }
 
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            foreach (Gate g in gatesList)
+            {
+                if (g.IsMouseOn(e.X, e.Y))
+                {
+                    if (g is InputSource src)
+                    {
+                        switch (src.IsOn)
+                        {
+                            case true:
+                                src.IsOn = false;
+                                break;
+                            case false:
+                                src.IsOn = true;
+                                break;
+                        }
+                    }
+                    this.Refresh();
+                }
+            }
+        }
+
         /// <summary>
         /// Handles events while the mouse button is pressed down.
         /// </summary>
@@ -280,11 +303,6 @@ namespace Circuits
                 {
                     if (g.IsMouseOn(e.X, e.Y))
                     {
-                        if(g is InputSource)
-                        {
-                            InputSource src = (InputSource)g;
-                            src.IsOn = true;
-                        }
                         g.Selected = true;
                         current = g;
                         this.Invalidate();

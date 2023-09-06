@@ -153,9 +153,29 @@ namespace Circuits.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap InputSrcActSelec {
+            get {
+                object obj = ResourceManager.GetObject("InputSrcActSelec", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap InputSrcInac {
             get {
                 object obj = ResourceManager.GetObject("InputSrcInac", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap InputSrcInacSelec {
+            get {
+                object obj = ResourceManager.GetObject("InputSrcInacSelec", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

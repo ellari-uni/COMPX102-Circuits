@@ -25,7 +25,16 @@ namespace Circuits
 
         public override void Draw(Graphics paper)
         {
-            Image image = active ? Properties.Resources.InputSrcAct : Properties.Resources.InputSrcInac;
+            Image image = null;
+            switch (selected)
+            {
+                case true:
+                    image = active ? Properties.Resources.InputSrcActSelec : Properties.Resources.InputSrcInacSelec;
+                    break;
+                case false:
+                    image = active ? Properties.Resources.InputSrcAct : Properties.Resources.InputSrcInac;
+                    break;
+            }
             foreach (Pin p in pins) p.Draw(paper);
             paper.DrawImage(image, Left, Top);
         }
@@ -44,6 +53,7 @@ namespace Circuits
         public bool IsOn
         {
             get { return active; }
+            set { active = value; }
         }
     }
 }
