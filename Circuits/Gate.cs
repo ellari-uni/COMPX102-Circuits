@@ -101,7 +101,6 @@ namespace Circuits
             //Set the position of the gate to the values passed in
             left = x;
             top = y;
-            // must move the pins too
             
         }
 

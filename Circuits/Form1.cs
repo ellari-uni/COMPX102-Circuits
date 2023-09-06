@@ -213,10 +213,19 @@ namespace Circuits
         {
             newGate = new OrGate(0, 0);
         }
-
+        /// <summary>
+        /// Handled NOT gate toolbar button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             newGate = new NotGate(0, 0);
+        }
+
+        private void toolStripButtonInput_Click(object sender, EventArgs e)
+        {
+            newGate = new InputSource(0, 0);
         }
 
         /// <summary>
@@ -271,6 +280,11 @@ namespace Circuits
                 {
                     if (g.IsMouseOn(e.X, e.Y))
                     {
+                        if(g is InputSource)
+                        {
+                            InputSource src = (InputSource)g;
+                            src.IsOn = true;
+                        }
                         g.Selected = true;
                         current = g;
                         this.Invalidate();
