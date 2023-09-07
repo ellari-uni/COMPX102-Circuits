@@ -258,10 +258,12 @@ namespace Circuits
             newGate = new OutputLamp(0, 0);
         }
 
-        private void btnEval_Click(object sender, EventArgs e)
+        
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
             List<OutputLamp> lamps = new List<OutputLamp>();
-            foreach(Gate gate in gatesList)
+            foreach (Gate gate in gatesList)
             {
                 if (gate is OutputLamp) lamps.Add((OutputLamp)gate);
             }

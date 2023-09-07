@@ -34,7 +34,7 @@
             this.toolStripButtonNot = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInput = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonOutput = new System.Windows.Forms.ToolStripButton();
-            this.btnEval = new System.Windows.Forms.Button();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,8 @@
             this.toolStripButtonOr,
             this.toolStripButtonNot,
             this.toolStripButtonInput,
-            this.toolStripButtonOutput});
+            this.toolStripButtonOutput,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1344, 27);
@@ -109,16 +110,16 @@
             this.toolStripButtonOutput.ToolTipText = "Output Lamp\r\nBlue is inactive, Green is active";
             this.toolStripButtonOutput.Click += new System.EventHandler(this.toolStripButtonOutput_Click);
             // 
-            // btnEval
+            // toolStripButton1
             // 
-            this.btnEval.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEval.Location = new System.Drawing.Point(1111, 584);
-            this.btnEval.Name = "btnEval";
-            this.btnEval.Size = new System.Drawing.Size(221, 88);
-            this.btnEval.TabIndex = 2;
-            this.btnEval.Text = "Evaluate";
-            this.btnEval.UseVisualStyleBackColor = true;
-            this.btnEval.Click += new System.EventHandler(this.btnEval_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Circuits.Properties.Resources.EvaluateIcon;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.ToolTipText = "Evaluate Circuit";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // Form1
             // 
@@ -126,7 +127,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1344, 713);
-            this.Controls.Add(this.btnEval);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
@@ -153,7 +153,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonNot;
         private System.Windows.Forms.ToolStripButton toolStripButtonInput;
         private System.Windows.Forms.ToolStripButton toolStripButtonOutput;
-        private System.Windows.Forms.Button btnEval;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
