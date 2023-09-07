@@ -258,6 +258,20 @@ namespace Circuits
             newGate = new OutputLamp(0, 0);
         }
 
+        private void btnEval_Click(object sender, EventArgs e)
+        {
+            List<OutputLamp> lamps = new List<OutputLamp>();
+            foreach(Gate gate in gatesList)
+            {
+                if (gate is OutputLamp) lamps.Add((OutputLamp)gate);
+            }
+            foreach (OutputLamp lamp in lamps)
+            {
+                lamp.Active = lamp.Evaluate();
+            }
+            Refresh();
+        }
+
         /// <summary>
         /// Handles events while the mouse button is pressed down.
         /// </summary>

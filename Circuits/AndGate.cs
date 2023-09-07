@@ -77,7 +77,7 @@ namespace Circuits
             {
                 foreach (Pin p in pins)
                 { 
-                    if (!(p.InputWire.FromPin.Owner.Evaluate() == true)) return false;
+                    if (p.InputWire != null && !(p.InputWire.FromPin.Owner.Evaluate() == true) ) return false;
                 }
                 return true;
             };

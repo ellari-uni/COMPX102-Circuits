@@ -34,6 +34,7 @@
             this.toolStripButtonNot = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInput = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonOutput = new System.Windows.Forms.ToolStripButton();
+            this.btnEval = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,14 +104,26 @@
             this.toolStripButtonOutput.Text = "toolStripButton1";
             this.toolStripButtonOutput.Click += new System.EventHandler(this.toolStripButtonOutput_Click);
             // 
+            // btnEval
+            // 
+            this.btnEval.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEval.Location = new System.Drawing.Point(1111, 584);
+            this.btnEval.Name = "btnEval";
+            this.btnEval.Size = new System.Drawing.Size(221, 88);
+            this.btnEval.TabIndex = 2;
+            this.btnEval.Text = "Evaluate";
+            this.btnEval.UseVisualStyleBackColor = true;
+            this.btnEval.Click += new System.EventHandler(this.btnEval_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1344, 897);
+            this.ClientSize = new System.Drawing.Size(1344, 713);
+            this.Controls.Add(this.btnEval);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Circuits 2023";
@@ -135,6 +148,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonNot;
         private System.Windows.Forms.ToolStripButton toolStripButtonInput;
         private System.Windows.Forms.ToolStripButton toolStripButtonOutput;
+        private System.Windows.Forms.Button btnEval;
     }
 }
 
