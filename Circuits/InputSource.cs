@@ -60,5 +60,11 @@ namespace Circuits
             get { return active; }
             set { active = value; }
         }
+        public override Gate Clone()
+        {
+            InputSource clone = new InputSource(Position[0], Position[1]);
+            clone.pins = pins.ToList();
+            return clone;
+        }
     }
 }

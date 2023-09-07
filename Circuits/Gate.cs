@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,6 +66,11 @@ namespace Circuits
             get { return top; }
         }
 
+        public int[] Position
+        {
+            get { return new int[] { left, top }; }
+        }
+
         /// <summary>
         /// Gets the list of pins for the gate.
         /// </summary>
@@ -105,6 +111,7 @@ namespace Circuits
         }
 
         public abstract bool Evaluate();
+        public abstract Gate Clone();
 
 
     }

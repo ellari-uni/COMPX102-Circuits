@@ -84,5 +84,12 @@ namespace Circuits
             return isTrue(pins);
         }
 
+        public override Gate Clone()
+        {
+            AndGate clone = new AndGate(Position[0], Position[1]);
+            clone.pins = pins.ToList();
+            return clone;
+        }
+
     }
 }

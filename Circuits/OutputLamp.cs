@@ -54,5 +54,11 @@ namespace Circuits
         {
             return pins[0].InputWire.FromPin.Owner.Evaluate();
         }
+        public override Gate Clone()
+        {
+            OutputLamp clone = new OutputLamp(Position[0], Position[1]);
+            clone.pins = pins.ToList();
+            return clone;
+        }
     }
 }

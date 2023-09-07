@@ -51,5 +51,11 @@ namespace Circuits
             };
             return isTrue(pins);
         }
+        public override Gate Clone()
+        {
+            OrGate clone = new OrGate(Position[0], Position[1]);
+            clone.pins = pins.ToList();
+            return clone;
+        }
     }
 }
