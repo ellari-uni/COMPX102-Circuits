@@ -58,6 +58,8 @@ namespace Circuits
         {
             InitializeComponent();
             DoubleBuffered = true;
+
+            MessageBox.Show("!!!!!!!!!!!!NOTE FOR THE MARKER!!!!!!!!!!!\n\nThe Input tool requires you to DOUBLE CLICK to change status\n\nThis is intentional - and means that the tool can be moved without changing states!", "A note for the Assessor");
         }
 
         /// <summary>
