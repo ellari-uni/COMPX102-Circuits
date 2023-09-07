@@ -34,7 +34,8 @@
             this.toolStripButtonNot = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonInput = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonOutput = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEval = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonClone = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             this.toolStripButtonNot,
             this.toolStripButtonInput,
             this.toolStripButtonOutput,
-            this.toolStripButton1});
+            this.toolStripButtonEval,
+            this.toolStripButtonClone});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1344, 27);
@@ -110,16 +112,26 @@
             this.toolStripButtonOutput.ToolTipText = "Output Lamp\r\nBlue is inactive, Green is active";
             this.toolStripButtonOutput.Click += new System.EventHandler(this.toolStripButtonOutput_Click);
             // 
-            // toolStripButton1
+            // toolStripButtonEval
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Circuits.Properties.Resources.EvaluateIcon;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.ToolTipText = "Evaluate Circuit";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            this.toolStripButtonEval.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEval.Image = global::Circuits.Properties.Resources.EvaluateIcon;
+            this.toolStripButtonEval.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEval.Name = "toolStripButtonEval";
+            this.toolStripButtonEval.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonEval.Text = "toolStripButton1";
+            this.toolStripButtonEval.ToolTipText = "Evaluate Circuit";
+            this.toolStripButtonEval.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
+            // toolStripButtonClone
+            // 
+            this.toolStripButtonClone.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonClone.Image = global::Circuits.Properties.Resources.CopyIcon;
+            this.toolStripButtonClone.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonClone.Name = "toolStripButtonClone";
+            this.toolStripButtonClone.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonClone.Text = "toolStripButton2";
+            this.toolStripButtonClone.ToolTipText = "Clone Selected";
             // 
             // Form1
             // 
@@ -153,7 +165,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonNot;
         private System.Windows.Forms.ToolStripButton toolStripButtonInput;
         private System.Windows.Forms.ToolStripButton toolStripButtonOutput;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEval;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClone;
     }
 }
 
