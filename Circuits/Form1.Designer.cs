@@ -132,6 +132,7 @@
             this.toolStripButtonClone.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonClone.Text = "toolStripButton2";
             this.toolStripButtonClone.ToolTipText = "Clone Selected";
+            this.toolStripButtonClone.Click += new System.EventHandler(this.toolStripButtonClone_Click);
             // 
             // Form1
             // 

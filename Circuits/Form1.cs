@@ -274,6 +274,13 @@ namespace Circuits
             Refresh();
         }
 
+        private void toolStripButtonClone_Click(object sender, EventArgs e)
+        {
+            if (current != null) newGate = current.Clone();
+            else MessageBox.Show("You must select a gate first!");
+            Refresh();
+        }
+
         /// <summary>
         /// Handles events while the mouse button is pressed down.
         /// </summary>

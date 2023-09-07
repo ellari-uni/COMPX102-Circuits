@@ -87,7 +87,13 @@ namespace Circuits
         public override Gate Clone()
         {
             AndGate clone = new AndGate(Position[0], Position[1]);
-            clone.pins = pins.ToList();
+            List<Pin> pins = new List<Pin>();
+
+            foreach (Pin pin in this.pins)
+            {
+                pins.Add(new Pin(pin.Owner, pin.IsInput, 20));
+            }
+            clone.pins = pins;
             return clone;
         }
 
