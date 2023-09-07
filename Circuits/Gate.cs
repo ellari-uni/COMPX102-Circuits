@@ -104,6 +104,8 @@ namespace Circuits
             
         }
 
+        public abstract bool Evaluate();
+
 
     }
 }

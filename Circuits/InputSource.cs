@@ -50,6 +50,11 @@ namespace Circuits
 
         }
 
+        public override bool Evaluate()
+        {
+            return IsOn;
+        }
+
         public bool IsOn
         {
             get { return active; }

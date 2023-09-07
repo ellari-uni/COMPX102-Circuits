@@ -71,7 +71,18 @@ namespace Circuits
 
 
         }
+        public override bool Evaluate()
+        {
+            Func<List<Pin>, bool> isTrue = pins =>
+            {
+                foreach (Pin p in pins)
+                { 
+                    if (!(p.InputWire.FromPin.Owner.Evaluate() == true)) return false;
+                }
+                return true;
+            };
+            return isTrue(pins);
+        }
 
-        
     }
 }
