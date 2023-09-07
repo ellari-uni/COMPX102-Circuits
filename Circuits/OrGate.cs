@@ -39,5 +39,17 @@ namespace Circuits
             pins[2].X = x + 20 + WIDTH + GAP;
             pins[2].Y = y + 5 + HEIGHT / 2;
         }
+        public override bool Evaluate()
+        {
+            Func<List<Pin>, bool> isTrue = pins =>
+            {
+                foreach (Pin p in pins)
+                {
+                    if (p.InputWire.FromPin.Owner.Evaluate() == true) return true;
+                }
+                return false;
+            };
+            return isTrue(pins);
+        }
     }
 }
