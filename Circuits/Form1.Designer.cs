@@ -62,6 +62,7 @@
             this.toolStripButtonAnd.Name = "toolStripButtonAnd";
             this.toolStripButtonAnd.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonAnd.Text = "toolStripButton1";
+            this.toolStripButtonAnd.ToolTipText = "AND Gate";
             this.toolStripButtonAnd.Click += new System.EventHandler(this.toolStripButtonAnd_Click);
             // 
             // toolStripButtonOr
@@ -72,6 +73,7 @@
             this.toolStripButtonOr.Name = "toolStripButtonOr";
             this.toolStripButtonOr.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonOr.Text = "toolStripButton1";
+            this.toolStripButtonOr.ToolTipText = "OR Gate";
             this.toolStripButtonOr.Click += new System.EventHandler(this.toolStripButtonOr_Click);
             // 
             // toolStripButtonNot
@@ -82,6 +84,7 @@
             this.toolStripButtonNot.Name = "toolStripButtonNot";
             this.toolStripButtonNot.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonNot.Text = "toolStripButton1";
+            this.toolStripButtonNot.ToolTipText = "NOT Gate";
             this.toolStripButtonNot.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButtonInput
@@ -92,6 +95,7 @@
             this.toolStripButtonInput.Name = "toolStripButtonInput";
             this.toolStripButtonInput.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonInput.Text = "toolStripButton1";
+            this.toolStripButtonInput.ToolTipText = "Input Source\r\nBlue is inactive, Green is active";
             this.toolStripButtonInput.Click += new System.EventHandler(this.toolStripButtonInput_Click);
             // 
             // toolStripButtonOutput
@@ -102,6 +106,7 @@
             this.toolStripButtonOutput.Name = "toolStripButtonOutput";
             this.toolStripButtonOutput.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonOutput.Text = "toolStripButton1";
+            this.toolStripButtonOutput.ToolTipText = "Output Lamp\r\nBlue is inactive, Green is active";
             this.toolStripButtonOutput.Click += new System.EventHandler(this.toolStripButtonOutput_Click);
             // 
             // btnEval
