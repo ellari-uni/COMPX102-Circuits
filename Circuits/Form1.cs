@@ -53,6 +53,10 @@ namespace Circuits
         /// The new gate that is about to be inserted into the circuit
         /// </summary>
         protected Gate newGate = null;
+        /// <summary>
+        /// New compound gate
+        /// </summary>
+        protected Compound newCompound = null;
 
         public Form1()
         {
@@ -277,8 +281,25 @@ namespace Circuits
         private void toolStripButtonClone_Click(object sender, EventArgs e)
         {
             if (current != null && !(current is Compound)) newGate = current.Clone();
+            else if (current is Compound) MessageBox.Show("Use the \"Compound Clone\" Button to clone compounds!");
             else MessageBox.Show("You must select a gate first!");
             Refresh();
+        }
+
+        private void toolStripButtonCompoundStart_Click(object sender, EventArgs e)
+        {
+            if (newCompound == null) newCompound = new Compound(0, 0);
+            else if (newCompound != null) MessageBox.Show("Finish with your current Compound first!!", "Error");
+        }
+
+        private void toolStripButtonEndCompound_Click(object sender, EventArgs e)
+        {
+            if (newCompound != null)
+            {
+                newGate = newCompound;
+                newCompound = null;
+            }
+            else if (newCompound == null) MessageBox.Show("Create a new Compound Group First!", "Error");
         }
 
         /// <summary>
@@ -333,6 +354,11 @@ namespace Circuits
                 {
                     if (g.IsMouseOn(e.X, e.Y))
                     {
+                        if (newCompound != null)
+                        {
+                            if (!newCompound.Gates.Contains(g)) newCompound.AddGate(g);
+                            MessageBox.Show(newCompound.Gates.Count.ToString());
+                        }
                         g.Selected = true;
                         current = g;
                         this.Invalidate();

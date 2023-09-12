@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,10 +17,9 @@ namespace Circuits
             left = x;
             top = y;
         }
-        public static List<Gate> operator + (Compound cmd, Gate gate)
+        public void AddGate(Gate g)
         {
-            cmd.gates.Add(gate);
-            return cmd.gates;
+            gates.Add(g);
         }
 
         public override void Draw(Graphics paper)
@@ -60,6 +60,12 @@ namespace Circuits
             cmpd.gates = newGates;
 
             return cmpd;
+        }
+
+        public List<Gate> Gates
+        {
+            get { return gates; }
+            set { gates = value; }
         }
     }
 }

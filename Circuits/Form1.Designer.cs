@@ -36,6 +36,8 @@
             this.toolStripButtonOutput = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEval = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonClone = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCompoundStart = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonEndCompound = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +52,9 @@
             this.toolStripButtonInput,
             this.toolStripButtonOutput,
             this.toolStripButtonEval,
-            this.toolStripButtonClone});
+            this.toolStripButtonClone,
+            this.toolStripButtonCompoundStart,
+            this.toolStripButtonEndCompound});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1344, 27);
@@ -134,6 +138,26 @@
             this.toolStripButtonClone.ToolTipText = "Clone Selected";
             this.toolStripButtonClone.Click += new System.EventHandler(this.toolStripButtonClone_Click);
             // 
+            // toolStripButtonCompoundStart
+            // 
+            this.toolStripButtonCompoundStart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCompoundStart.Image = global::Circuits.Properties.Resources.StartCompoundIcon;
+            this.toolStripButtonCompoundStart.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCompoundStart.Name = "toolStripButtonCompoundStart";
+            this.toolStripButtonCompoundStart.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonCompoundStart.Text = "toolStripButton1";
+            this.toolStripButtonCompoundStart.Click += new System.EventHandler(this.toolStripButtonCompoundStart_Click);
+            // 
+            // toolStripButtonEndCompound
+            // 
+            this.toolStripButtonEndCompound.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonEndCompound.Image = global::Circuits.Properties.Resources.EndCompoundIcon;
+            this.toolStripButtonEndCompound.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEndCompound.Name = "toolStripButtonEndCompound";
+            this.toolStripButtonEndCompound.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButtonEndCompound.Text = "toolStripButton1";
+            this.toolStripButtonEndCompound.Click += new System.EventHandler(this.toolStripButtonEndCompound_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,6 +192,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonOutput;
         private System.Windows.Forms.ToolStripButton toolStripButtonEval;
         private System.Windows.Forms.ToolStripButton toolStripButtonClone;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCompoundStart;
+        private System.Windows.Forms.ToolStripButton toolStripButtonEndCompound;
     }
 }
 
