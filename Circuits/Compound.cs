@@ -11,6 +11,11 @@ namespace Circuits
     {
         List<Gate> gates = new List<Gate>();
 
+        public Compound(int x, int y)
+        {
+            left = x;
+            top = y;
+        }
         public static List<Gate> operator + (Compound cmd, Gate gate)
         {
             cmd.gates.Add(gate);
@@ -27,14 +32,34 @@ namespace Circuits
 
         public override bool Evaluate()
         {
+            
             List<OutputLamp> lamps = new List<OutputLamp>();
-            foreach (Gate gate in gates)
+            Func<List<OutputLamp>, bool> AnyCheck = lampsLocal =>
             {
-                if (gate is OutputLamp lamp) lamps.Add(lamp);
+                foreach (OutputLamp output in lampsLocal)
+                {
+                    if (output.Active) return true;
+                }
+                return false;
+            };
+            foreach (Gate gate in gates) if (gate is OutputLamp lamp) lamps.Add(lamp);
+            foreach (OutputLamp lamp in lamps) lamp.Active = lamp.Evaluate();
+            return AnyCheck(lamps);
+
+        }
+
+        public override Gate Clone()
+        {
+            Compound cmpd = new Compound(Position[0], Position[1]);
+            List<Gate> newGates = new List<Gate>();
+            foreach(Gate g in gates)
+            {
+                newGates.Add(g.Clone());
             }
 
-            foreach (Gate gate in gates) if (gate is OutputLamp lamp) lamps.Add(lamp);
+            cmpd.gates = newGates;
 
+            return cmpd;
         }
     }
 }

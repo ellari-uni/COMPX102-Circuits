@@ -276,7 +276,7 @@ namespace Circuits
 
         private void toolStripButtonClone_Click(object sender, EventArgs e)
         {
-            if (current != null) newGate = current.Clone();
+            if (current != null && !(current is Compound)) newGate = current.Clone();
             else MessageBox.Show("You must select a gate first!");
             Refresh();
         }
