@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -66,6 +67,11 @@ namespace Circuits
         {
             get { return gates; }
             set { gates = value; }
+        }
+
+        public void Move(int x, int y)
+        {
+
         }
     }
 }
