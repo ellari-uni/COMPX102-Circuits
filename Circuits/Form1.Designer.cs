@@ -146,6 +146,8 @@
             this.toolStripButtonCompoundStart.Name = "toolStripButtonCompoundStart";
             this.toolStripButtonCompoundStart.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonCompoundStart.Text = "toolStripButton1";
+            this.toolStripButtonCompoundStart.ToolTipText = "Start Compound Group\r\nAfter checked, clicking gates adds to group.\r\nClick End Com" +
+    "pound to end this process";
             this.toolStripButtonCompoundStart.Click += new System.EventHandler(this.toolStripButtonCompoundStart_Click);
             // 
             // toolStripButtonEndCompound
@@ -156,6 +158,8 @@
             this.toolStripButtonEndCompound.Name = "toolStripButtonEndCompound";
             this.toolStripButtonEndCompound.Size = new System.Drawing.Size(29, 24);
             this.toolStripButtonEndCompound.Text = "toolStripButton1";
+            this.toolStripButtonEndCompound.ToolTipText = "End Compound Group\r\nEnds compound group creation\r\nMust have a Compound Group in t" +
+    "he process of creation";
             this.toolStripButtonEndCompound.Click += new System.EventHandler(this.toolStripButtonEndCompound_Click);
             // 
             // Form1
