@@ -3,3 +3,4 @@
 ## ID NUMBER: 1636274
 ### PROJECT PURPOSE
 To create a circuit simulator with AND, NOR, and OR Gates, and Input/Output
+Also has compound gate functionality
