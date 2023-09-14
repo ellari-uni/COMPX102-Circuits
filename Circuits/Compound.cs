@@ -69,9 +69,15 @@ namespace Circuits
             set { gates = value; }
         }
 
-        public void Move(int x, int y)
+        public override void MoveTo(int x, int y)
         {
+            int deltaX = Left - x;
+            int deltaY = Top - y;
 
+            foreach(Gate g in gates)
+            {
+                g.MoveTo(g.Left + deltaX, g.Top + deltaY);
+            }
         }
     }
 }
