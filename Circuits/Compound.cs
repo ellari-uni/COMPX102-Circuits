@@ -12,7 +12,7 @@ namespace Circuits
     public class Compound : Gate
     {
         List<Gate> gates = new List<Gate>();
-
+        Gate anchor = null;
         public Compound(int x, int y)
         {
             left = x;
@@ -20,7 +20,16 @@ namespace Circuits
         }
         public void AddGate(Gate g)
         {
+            g.DiffX = g.Left - Left;
+            g.DiffY = g.Top - Top;
             gates.Add(g);
+            if (anchor is null) anchor = g;
+            else if (g.Left < anchor.Left) anchor = g;
+            if(anchor != null)
+            {
+                g.DiffX = g.Left - anchor.Left;
+                g.DiffY = g.Top - anchor.Top;
+            }
         }
 
         public override void Draw(Graphics paper)
@@ -68,16 +77,22 @@ namespace Circuits
             get { return gates; }
             set { gates = value; }
         }
-
+        public Gate Anchor
+        {
+            get { return anchor; }
+            set { anchor = value; }
+        }
+        
         public override void MoveTo(int x, int y)
         {
-
-            foreach(Gate g in gates)
+            
+            anchor.MoveTo(x, y);
+            foreach (Gate g in gates)
             {
-                int[] deltas = g.GetDeltas(x, g.Left, y, g.Top);
-
-                g.MoveTo(x,y);
+                if (g != anchor) g.MoveTo(x + (g.Left - anchor.Left), y + (g.Top - anchor.Top));
             }
         }
+        
+
     }
 }

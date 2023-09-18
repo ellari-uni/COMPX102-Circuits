@@ -103,7 +103,8 @@ namespace Circuits
             else if (startX >= 0 && startY >= 0 && current != null)
             {
                 Console.WriteLine("mouse move to " + e.X + "," + e.Y);
-                current.MoveTo(currentX + (e.X - startX), currentY + (e.Y - startY));
+                
+                //current.MoveTo(currentX + (e.X - startX), currentY + (e.Y - startY));
                 this.Invalidate();
             }
             else if (newGate != null)
@@ -206,7 +207,11 @@ namespace Circuits
             else if (newGate != null)
             {
                 // show the gate that we are dragging into the circuit
-                newGate.MoveTo(currentX, currentY);
+                if (!(newGate is Compound)) newGate.MoveTo(currentX, currentY);
+                else if (newGate is Compound c)
+                {
+                    c.MoveTo(currentX, currentY);
+                }
                 if (!(newGate is Compound)) newGate.Draw(e.Graphics);
             }
         }
@@ -366,6 +371,12 @@ namespace Circuits
                     }
                 }
             }
+        }
+
+        private int GetDelta(int i, int iNew)
+        {
+            int diff = i - iNew;
+            return diff;
         }
     }
 }

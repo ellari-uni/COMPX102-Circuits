@@ -22,6 +22,8 @@ namespace Circuits
 
         // top is the top of the whole gate
         protected int top;
+        protected int diffX = 0;
+        protected int diffY = 0;
 
         // width and height of the main part of the gate
         protected const int WIDTH = 40;
@@ -78,7 +80,17 @@ namespace Circuits
         {
             get { return pins; }
         }
+        public int DiffX
+        {
+            get { return diffX; }
+            set { diffX = value; }
+        }
 
+        public int DiffY
+        {
+            get { return diffY; }
+            set { diffY = value; }
+        }
         /// <summary>
         /// Checks if the gate has been clicked on.
         /// </summary>
