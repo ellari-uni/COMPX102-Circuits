@@ -203,7 +203,7 @@ namespace Circuits
                     startPin.X, startPin.Y,
                     currentX, currentY);
             }
-            if (newGate != null)
+            else if (newGate != null)
             {
                 // show the gate that we are dragging into the circuit
                 newGate.MoveTo(currentX, currentY);

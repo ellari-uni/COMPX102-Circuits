@@ -71,12 +71,13 @@ namespace Circuits
 
         public override void MoveTo(int x, int y)
         {
-            int deltaX = Left - x;
-            int deltaY = Top - y;
+            
 
             foreach(Gate g in gates)
             {
-                g.MoveTo(g.Left + deltaX, g.Top + deltaY);
+                int[] deltas = g.GetDeltas(x, g.Left, y, g.Top);
+
+                g.MoveTo(deltas[0], deltas[1]);
             }
         }
     }

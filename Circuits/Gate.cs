@@ -112,7 +112,10 @@ namespace Circuits
 
         public abstract bool Evaluate();
         public abstract Gate Clone();
-
+        public int[] GetDeltas(int originX, int newX, int originY, int newY)
+        {
+            return new int[] { originX - newX, originY - newY };
+        }
 
     }
 }

@@ -31,3 +31,14 @@ H:\COMPX102\Circuits-Solution-2023\Circuits-Template-2023\Circuits\obj\Debug\Cir
 H:\COMPX102\Circuits-Solution-2023\Circuits-Template-2023\Circuits\bin\Debug\Circuits.exe.config
 H:\COMPX102\Circuits-Solution-2023\Circuits-Template-2023\Circuits\bin\Debug\Circuits.exe
 H:\COMPX102\Circuits-Solution-2023\Circuits-Template-2023\Circuits\bin\Debug\Circuits.pdb
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\bin\Debug\Circuits.exe.config
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\bin\Debug\Circuits.exe
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\bin\Debug\Circuits.pdb
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.csproj.AssemblyReference.cache
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.csproj.SuggestedBindingRedirects.cache
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.Form1.resources
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.Properties.Resources.resources
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.csproj.GenerateResource.cache
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.csproj.CoreCompileInputs.cache
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.exe
+C:\Users\frogs\OneDrive\Desktop\TempCircuits\Circuits\obj\Debug\Circuits.pdb
