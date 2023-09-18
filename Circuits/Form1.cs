@@ -207,7 +207,7 @@ namespace Circuits
             {
                 // show the gate that we are dragging into the circuit
                 newGate.MoveTo(currentX, currentY);
-                newGate.Draw(e.Graphics);
+                if (!(newGate is Compound)) newGate.Draw(e.Graphics);
             }
         }
         /// <summary>
