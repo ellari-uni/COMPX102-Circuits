@@ -22,7 +22,9 @@ namespace Circuits
 
         // top is the top of the whole gate
         protected int top;
+        //x difference between an object and this object
         protected int diffX = 0;
+        //y difference between an object and this object
         protected int diffY = 0;
 
         // width and height of the main part of the gate
@@ -67,7 +69,9 @@ namespace Circuits
         {
             get { return top; }
         }
-
+        /// <summary>
+        /// Gets the coordinates of the gate as an integer array
+        /// </summary>
         public int[] Position
         {
             get { return new int[] { left, top }; }
@@ -80,12 +84,17 @@ namespace Circuits
         {
             get { return pins; }
         }
+        /// <summary>
+        /// Gets and sets the x difference
+        /// </summary>
         public int DiffX
         {
             get { return diffX; }
             set { diffX = value; }
         }
-
+        /// <summary>
+        /// gets and sets the y difference
+        /// </summary>
         public int DiffY
         {
             get { return diffY; }
@@ -121,13 +130,15 @@ namespace Circuits
             top = y;
             
         }
-
+        /// <summary>
+        /// Abstract evaluate method, to be described in subclasses
+        /// </summary>
+        /// <returns></returns>
         public abstract bool Evaluate();
+        /// <summary>
+        /// Abstract clone method, to be described in subclasses
+        /// </summary>
+        /// <returns></returns>
         public abstract Gate Clone();
-        public int[] GetDeltas(int originX, int newX, int originY, int newY)
-        {
-            return new int[] { originX - newX, originY - newY };
-        }
-
     }
 }

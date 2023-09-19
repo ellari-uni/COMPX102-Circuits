@@ -290,42 +290,74 @@ namespace Circuits
         }
 
         
-
+        /// <summary>
+        /// Handles evaluate button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
+            //Create new list of output lamps in the circuit
             List<OutputLamp> lamps = new List<OutputLamp>();
+            //Foreach gate in the circuit
             foreach (Gate gate in gatesList)
             {
-                if (gate is OutputLamp) lamps.Add((OutputLamp)gate);
+                //If the gate is an output lamp, add it to the list of output lamps
+                if (gate is OutputLamp lamp) lamps.Add(lamp);
             }
+            //For each lamp in the output lamp list
             foreach (OutputLamp lamp in lamps)
             {
+                //If the lamp evaluates to true, set active to true, else set to false
                 lamp.Active = lamp.Evaluate();
             }
+            //Refresh the form
             Refresh();
         }
-
+        /// <summary>
+        /// Handles clone button toolbar click event 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonClone_Click(object sender, EventArgs e)
         {
+            //If there is a value in current, and it is not a compound, then clone the current gate
             if (current != null && !(current is Compound)) newGate = current.Clone();
+            //Else if current is compound, show a messagebox saying to use a different button (not implemented)
             else if (current is Compound) MessageBox.Show("Use the \"Compound Clone\" Button to clone compounds!");
+            //Else show error saying a gate must be selected
             else MessageBox.Show("You must select a gate first!");
+            //Refresh the form
             Refresh();
         }
-
+        /// <summary>
+        /// Handles compoundStart toolbar button click event 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonCompoundStart_Click(object sender, EventArgs e)
         {
+            //If there is not already a compound being created, create a new compound at 0,0
             if (newCompound == null) newCompound = new Compound(0, 0);
+            //Else if there is a compound currently being created, tell the user to finish the current compound first
             else if (newCompound != null) MessageBox.Show("Finish with your current Compound first!!", "Error");
         }
-
+        /// <summary>
+        /// Handles compoundEnd toolbar Button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonEndCompound_Click(object sender, EventArgs e)
         {
+            //If there is currently a compound being created
             if (newCompound != null)
             {
+                //Set NewGate to the compound
                 newGate = newCompound;
+                //Set newcompound to null
                 newCompound = null;
             }
+            //If there is not a compound being created, tell the user to create a compound first
             else if (newCompound == null) MessageBox.Show("Create a new Compound Group First!", "Error");
         }
 
@@ -382,10 +414,13 @@ namespace Circuits
                 {
                     if (g.IsMouseOn(e.X, e.Y))
                     {
+                        //If a new compound is being created
                         if (newCompound != null)
                         {
+                            //If the compound gates list doesn't already contain the current gate, add the gate to the list of gates
                             if (!newCompound.Gates.Contains(g)) newCompound.AddGate(g);
-                            MessageBox.Show(newCompound.Gates.Count.ToString());
+                            //Show messagebox with amount of gates in the list (DEBUG)
+                            //MessageBox.Show(newCompound.Gates.Count.ToString());
                         }
                         g.Selected = true;
                         current = g;
