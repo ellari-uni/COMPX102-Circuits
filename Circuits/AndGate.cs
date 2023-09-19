@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * NAME: Hayden Gillanders
+ * ID NUMBER: 1636274
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -30,10 +35,16 @@ namespace Circuits
             //move the gate and the pins to the position passed in
             MoveTo(x, y);
         }
-
+        /// <summary>
+        /// Move method to move the gate and its pins
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public override void MoveTo(int x, int y)
         {
+            //Call base move method
             base.MoveTo(x, y);
+            //Set all pins to location
             pins[0].X = x - GAP;
             pins[0].Y = y + 5 + GAP;
             pins[1].X = x - GAP;
@@ -71,8 +82,13 @@ namespace Circuits
 
 
         }
+        /// <summary>
+        /// Evaluate gate, returns true if both pins are true
+        /// </summary>
+        /// <returns></returns>
         public override bool Evaluate()
         {
+            //Function to check if its true, using pins list as param
             Func<List<Pin>, bool> isTrue = pins =>
             {
                 foreach (Pin p in pins)
@@ -81,19 +97,29 @@ namespace Circuits
                 }
                 return true;
             };
+            //Return functioncall
             return isTrue(pins);
         }
-
+        /// <summary>
+        /// Returns a copy of the gate and it's pins 
+        /// </summary>
+        /// <returns></returns>
         public override Gate Clone()
         {
+            //create new and gate as a clone, using the current gate's position
             AndGate clone = new AndGate(Position[0], Position[1]);
+            //Create new list of pins for the new gate
             List<Pin> pins = new List<Pin>();
 
+            //Foreach pin in the current object's list of pins
             foreach (Pin pin in this.pins)
             {
+                //Add a new pin, using the current pin's parameters 
                 pins.Add(new Pin(pin.Owner, pin.IsInput, 20));
             }
+            //Add the new list of pins to the clone's pin list
             clone.pins = pins;
+            //return the clone 
             return clone;
         }
 

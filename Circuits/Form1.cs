@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * NAME: Hayden Gillanders
+ * ID NUMBER: 1636274
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,7 +67,7 @@ namespace Circuits
         {
             InitializeComponent();
             DoubleBuffered = true;
-
+            //Show marker message
             MessageBox.Show("!!!!!!!!!!!!NOTE FOR THE MARKER!!!!!!!!!!!\n\nThe Input tool requires you to DOUBLE CLICK to change status\n\nThis is intentional - and means that the tool can be moved without changing states!", "A note for the Assessor");
         }
 
@@ -207,11 +212,9 @@ namespace Circuits
             else if (newGate != null)
             {
                 // show the gate that we are dragging into the circuit
-                if (!(newGate is Compound)) newGate.MoveTo(currentX, currentY);
-                else if (newGate is Compound c)
-                {
-                    c.MoveTo(currentX, currentY);
-                }
+
+                newGate.MoveTo(currentX, currentY);
+                //If the newGate isn't a compound, draw it (will cause duplicates to show if drawn as a compound)
                 if (!(newGate is Compound)) newGate.Draw(e.Graphics);
             }
         }
@@ -233,35 +236,54 @@ namespace Circuits
         {
             newGate = new NotGate(0, 0);
         }
-
+        /// <summary>
+        /// Handles Input source toolbar button click event 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonInput_Click(object sender, EventArgs e)
         {
             newGate = new InputSource(0, 0);
         }
-
+        /// <summary>
+        /// Handles double click events on the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            //Foreach gate on the form
             foreach (Gate g in gatesList)
             {
+                //If the mouse is on the gate
                 if (g.IsMouseOn(e.X, e.Y))
                 {
+                    //If the gate is a inputsource
                     if (g is InputSource src)
                     {
+                        //Checking isOn
                         switch (src.IsOn)
                         {
+                            //If true, set to false
                             case true:
                                 src.IsOn = false;
                                 break;
+                            //If false, set to true
                             case false:
                                 src.IsOn = true;
                                 break;
                         }
                     }
+                    //Refresh the form
                     this.Refresh();
                 }
             }
         }
-
+        /// <summary>
+        /// Handles output lamp toolbar button click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripButtonOutput_Click(object sender, EventArgs e)
         {
             newGate = new OutputLamp(0, 0);
