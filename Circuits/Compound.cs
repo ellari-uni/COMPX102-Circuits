@@ -24,6 +24,7 @@ namespace Circuits
             g.DiffX = g.Left - Left;
             g.DiffY = g.Top - Top;
             gates.Add(g);
+            g.Selected = true;
             if (anchor is null) anchor = g;
             else if (g.Left < anchor.Left) anchor = g;
             if(anchor != null)
@@ -91,6 +92,7 @@ namespace Circuits
             anchor.MoveTo(x, y);
             foreach (Gate g in gates)
             {
+                g.Selected = true;
                 if (g != anchor) g.MoveTo(x + (g.DiffX), y + (g.DiffY));
             }
         }

@@ -348,6 +348,7 @@ namespace Circuits
             if (newGate != null)
             {
                 newGate.MoveTo(e.X, e.Y);
+                if (newGate is Compound c) foreach (Gate g in c.Gates) g.Selected = false;
                 gatesList.Add(newGate);
                 newGate = null;
                 this.Invalidate();
@@ -369,14 +370,10 @@ namespace Circuits
                         this.Invalidate();
                         break;
                     }
+                    
                 }
             }
         }
 
-        private int GetDelta(int i, int iNew)
-        {
-            int diff = i - iNew;
-            return diff;
-        }
     }
 }
