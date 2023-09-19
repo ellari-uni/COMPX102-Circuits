@@ -104,7 +104,7 @@ namespace Circuits
             {
                 Console.WriteLine("mouse move to " + e.X + "," + e.Y);
                 
-                //current.MoveTo(currentX + (e.X - startX), currentY + (e.Y - startY));
+                current.MoveTo(currentX + (e.X - startX), currentY + (e.Y - startY));
                 this.Invalidate();
             }
             else if (newGate != null)

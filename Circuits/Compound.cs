@@ -13,6 +13,7 @@ namespace Circuits
     {
         List<Gate> gates = new List<Gate>();
         Gate anchor = null;
+        int[] anchorOrigins = new int[2];
         public Compound(int x, int y)
         {
             left = x;
@@ -27,8 +28,9 @@ namespace Circuits
             else if (g.Left < anchor.Left) anchor = g;
             if(anchor != null)
             {
-                g.DiffX = g.Left - anchor.Left;
-                g.DiffY = g.Top - anchor.Top;
+                anchorOrigins = new int[] { anchor.Left, anchor.Top };
+                g.DiffX = g.Left - anchorOrigins[0];
+                g.DiffY = g.Top - anchorOrigins[1];
             }
         }
 
@@ -89,7 +91,7 @@ namespace Circuits
             anchor.MoveTo(x, y);
             foreach (Gate g in gates)
             {
-                if (g != anchor) g.MoveTo(x + (g.Left - anchor.Left), y + (g.Top - anchor.Top));
+                if (g != anchor) g.MoveTo(x + (g.DiffX), y + (g.DiffY));
             }
         }
         
