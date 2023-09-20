@@ -326,12 +326,25 @@ namespace Circuits
                 /********************/
                 //Set NewGate to the compound
                 newGate = newCompound;
-                newGate.MoveTo(currentX, currentY);
+                foreach(Gate g in ((Compound)newGate).Gates)
+                {
+                    g.MoveTo(g.Left, g.Top);
+                    g.Selected = false;
+                }
                 //Set newcompound to null
                 newCompound = null;
                 /********************/
 
                 newGate = newGate.Clone();
+                if(newGate is Compound c)
+                {
+                    foreach(Gate g in c.Gates)
+                    {
+                        gatesList.Add(g);
+                        
+                    }
+                    
+                }
             }
             //If there is a value in current, and it is not a compound, then clone the current gate
             else if (current != null && !(newGate is Compound)) newGate = current.Clone();

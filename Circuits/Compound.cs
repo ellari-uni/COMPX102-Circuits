@@ -123,6 +123,7 @@ namespace Circuits
             if (anchor == null) foreach (Gate g in gates) AnchorProp(g);
 
             //Move the anchor to the mouse position
+            base.MoveTo(x, y);
             anchor.MoveTo(x, y);
             //Foreach gate in the compound
             foreach (Gate g in gates)
@@ -135,10 +136,16 @@ namespace Circuits
         }
         
         private void AnchorProp(Gate g)
-        {//If there is no anchor, set provided gate to anchor
+        {
+            //If there is no anchor, set provided gate to anchor
             if (anchor is null) anchor = g;
             //Else if there is an anchor, if the current gate is further left than the previous anchor, set the anchor to current gate
-            else if (g.Left < anchor.Left) anchor = g;
+            else if (g.Left < anchor.Left)
+            {
+                anchor = g;
+                anchor.DiffX = 0;
+                anchor.DiffY = 0;
+            }
 
             if (anchor != null)
             {
@@ -150,5 +157,11 @@ namespace Circuits
                 g.DiffY = g.Top - anchorOrigins[1];
             }
         }
+
+        public Gate Anchor
+        {
+            get { return anchor; }
+        }
+
     }
 }
