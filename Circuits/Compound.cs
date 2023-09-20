@@ -46,20 +46,7 @@ namespace Circuits
             gates.Add(g);
             //Set selected of the current gate to true
             g.Selected = true;
-            //If there is no anchor, set provided gate to anchor
-            if (anchor is null) anchor = g;
-            //Else if there is an anchor, if the current gate is further left than the previous anchor, set the anchor to current gate
-            else if (g.Left < anchor.Left) anchor = g;
-            //If anchor has a value
-            if(anchor != null)
-            {
-                //Set origins of the anchor to the current anchor left and anchor Top 
-                anchorOrigins = new int[] { anchor.Left, anchor.Top };
-                //Set the current gate x difference to the difference between the anchor x and gate x
-                g.DiffX = g.Left - anchorOrigins[0];
-                //set the current gate y difference to the difference between the anchor y and gate y
-                g.DiffY = g.Top - anchorOrigins[1];
-            }
+            AnchorProp(g);
         }
         /// <summary>
         /// Draw the compound on the canvas
@@ -133,6 +120,8 @@ namespace Circuits
         /// <param name="y"></param>
         public override void MoveTo(int x, int y)
         {
+            if (anchor == null) foreach (Gate g in gates) AnchorProp(g);
+
             //Move the anchor to the mouse position
             anchor.MoveTo(x, y);
             //Foreach gate in the compound
@@ -145,6 +134,21 @@ namespace Circuits
             }
         }
         
+        private void AnchorProp(Gate g)
+        {//If there is no anchor, set provided gate to anchor
+            if (anchor is null) anchor = g;
+            //Else if there is an anchor, if the current gate is further left than the previous anchor, set the anchor to current gate
+            else if (g.Left < anchor.Left) anchor = g;
 
+            if (anchor != null)
+            {
+                //Set origins of the anchor to the current anchor left and anchor Top 
+                anchorOrigins = new int[] { anchor.Left, anchor.Top };
+                //Set the current gate x difference to the difference between the anchor x and gate x
+                g.DiffX = g.Left - anchorOrigins[0];
+                //set the current gate y difference to the difference between the anchor y and gate y
+                g.DiffY = g.Top - anchorOrigins[1];
+            }
+        }
     }
 }

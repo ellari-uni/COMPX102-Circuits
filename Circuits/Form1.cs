@@ -321,10 +321,21 @@ namespace Circuits
         /// <param name="e"></param>
         private void toolStripButtonClone_Click(object sender, EventArgs e)
         {
+            if (newCompound != null)
+            {
+                /********************/
+                //Set NewGate to the compound
+                newGate = newCompound;
+                newGate.MoveTo(currentX, currentY);
+                //Set newcompound to null
+                newCompound = null;
+                /********************/
+
+                newGate = newGate.Clone();
+            }
             //If there is a value in current, and it is not a compound, then clone the current gate
-            if (current != null && !(current is Compound)) newGate = current.Clone();
-            //Else if current is compound, show a messagebox saying to use a different button (not implemented)
-            else if (current is Compound) MessageBox.Show("Use the \"Compound Clone\" Button to clone compounds!");
+            else if (current != null && !(newGate is Compound)) newGate = current.Clone();
+            
             //Else show error saying a gate must be selected
             else MessageBox.Show("You must select a gate first!");
             //Refresh the form
