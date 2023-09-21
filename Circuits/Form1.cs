@@ -420,7 +420,7 @@ namespace Circuits
                             //If the compound gates list doesn't already contain the current gate, add the gate to the list of gates
                             if (!newCompound.Gates.Contains(g)) newCompound.AddGate(g);
                             //Show messagebox with amount of gates in the list (DEBUG)
-                            //MessageBox.Show(newCompound.Gates.Count.ToString());
+
                         }
                         g.Selected = true;
                         current = g;
