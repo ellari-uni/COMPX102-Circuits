@@ -2,6 +2,22 @@
  * NAME: Hayden Gillanders
  * ID NUMBER: 1636274
  */
+/* ANSWERS TO THEORY QUESTIONS
+ * QUESTION 1:
+        It is better to fully comment the GATE class, as comments can be inherited
+* QUESTION 2:
+        The advantage of using abstract is it requires all child classes to have the method - meaning all child classes will be able to use the method. Declaring a method as virtual
+        means that it can be overwritten, but is not required in child classes.
+        
+        The Disadvantage of using abstract methods is that you cannot use the method in the base class - for example a abstract METHOD1 in GATE would not be able to be used by a base GATE object
+
+* QUESTION 3:
+        Yes
+* Question 4:
+        In my program, it is not possible to add a compound gate to another compound gate, as you can only have one compound gate active at a time
+
+*/
+
 
 using System;
 using System.Collections.Generic;
